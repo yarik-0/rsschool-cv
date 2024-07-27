@@ -409,3 +409,86 @@ header nav ul li a {
     line-height: 18px;
     color: #B2B2B2;
 }
+
+footer {
+    background-image: url("./images/footer-gradient-background.png");
+    height: 350px;
+    width: 1280px;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 40px 0 40px;
+}
+
+footer .footer-content .contacts {
+    width: 279px;
+    margin-top: 16px;
+}
+
+footer .footer-content img{
+    margin-right: 20px;
+}
+
+footer .footer-content .contacts h2 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+footer .footer-content .contacts div {
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-content .contacts .email {
+    margin: 40px auto;
+}
+
+footer .footer-content .locations {
+    width: 302px;
+    margin-top: 16px;
+}
+
+footer .footer-content .locations .central-street {
+    margin: 33px auto;
+}
+
+footer .footer-content .locations h2 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+footer .footer-content .locations div {
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-content p {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    margin: 0;
+}
+
+footer .footer-content .footer-puppy {
+    width: 300px;
+    height: 310px;
+    margin: 0;
+}
