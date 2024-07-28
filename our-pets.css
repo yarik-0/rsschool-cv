@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+  
 body {
     margin: 0 auto;
     width: 1280px;
@@ -21,7 +25,7 @@ header .logo {
     float: left;
 }
 
-header .logo h1 {
+header .logo a {
     margin: 0;
     font-family: 'Georgia';
     font-style: normal;
@@ -32,6 +36,7 @@ header .logo h1 {
     align-items: center;
     letter-spacing: 0.06em;
     color: #545454;
+    text-decoration: none;
 }
 
 header .logo h2 {
@@ -70,6 +75,12 @@ header nav ul li {
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+header nav ul li:hover a {
+    color: #292929;
+    border-bottom: 3px solid #F1CDB3;
+    transition: 0.5s;
 }
 
 header nav ul li.active {
@@ -164,6 +175,12 @@ header nav ul li a {
     margin-bottom: 30px;
 }
 
+.pets .content .slider .card:hover .button-card{
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 0.5s;
+}
+
 .pets .content .navigation {
     display: flex;
     justify-content: center;
@@ -193,12 +210,14 @@ header nav ul li a {
     background: #F1CDB3;
     color: #292929;
     border: 2px solid #F1CDB3;
+    cursor: pointer;
 }
 
 
 .pets .content .active {
     border: 2px solid #F1CDB3;
     color: #292929;
+    cursor: pointer;
 }
 
 footer {
@@ -267,7 +286,7 @@ footer .footer-content .locations div {
     align-items: center;
 }
 
-footer .footer-content p {
+footer .footer-content a {
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
@@ -276,6 +295,7 @@ footer .footer-content p {
     letter-spacing: 0.06em;
     color: #F1CDB3;
     margin: 0;
+    text-decoration: none;
 }
 
 footer .footer-content .footer-puppy {

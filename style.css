@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}  
+
 body {
     margin: 0 auto;
     width: 1280px;
@@ -21,7 +25,7 @@ header .logo {
     float: left;
 }
 
-header .logo h1 {
+header .logo a {
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
@@ -30,6 +34,7 @@ header .logo h1 {
     letter-spacing: 2px;
     margin: 5px 0;
     color: #F1CDB3;
+    text-decoration: none;
 }
 
 header .logo h2 {
@@ -56,12 +61,18 @@ header nav ul {
 
 header nav ul li {
     margin: 0 10px;
-    color: #FAFAFA;
+    color: #CDCDCD;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
 }
+
+header nav ul li:hover a {
+    color: #FAFAFA;
+    border-bottom: 3px solid #F1CDB3;
+    transition: 0.2s;
+} 
 
 header nav ul li.active {
     border-bottom: 3px solid #F1CDB3;
@@ -122,7 +133,7 @@ header nav ul li a {
 
 .startscreen .content .text .button-primary {
     height: 52px;
-    width: 208px;
+    width: 222px;
     padding-top: 16px;
 }
 
@@ -136,7 +147,13 @@ header nav ul li a {
     background: #F1CDB3;
     color: #292929;
     text-decoration: none;
-    padding: 16px 52px;
+    padding: 16px 44px;
+    letter-spacing: 0.06em;
+}
+
+.startscreen .content .text .button:hover {
+    background: #FDDCC4;
+    transition: 0.5s;
 }
 
 .startscreen .startscreen-poppy {
@@ -232,6 +249,12 @@ header nav ul li a {
     border-radius: 100px;
 }
 
+.pets .pets-content .slider .button-arrow:hover {
+    background: #F1CDB3;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 .pets .pets-content .slider .card {
     background: #FAFAFA;
     border-radius: 9px;
@@ -268,6 +291,12 @@ header nav ul li a {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+}
+
+.pets .pets-content .slider .card:hover .button-card{
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 0.5s;
 }
 
 .pets .pets-content .button-container {
@@ -405,6 +434,7 @@ header nav ul li a {
     letter-spacing: 0.06em;
     color: #545454;
     margin-left: 15px;
+    text-decoration: none;
 }
 
 .donation .donation-content .content p {
@@ -482,7 +512,7 @@ footer .footer-content .locations div {
     align-items: center;
 }
 
-footer .footer-content p {
+footer .footer-content a {
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
@@ -491,6 +521,7 @@ footer .footer-content p {
     letter-spacing: 0.06em;
     color: #F1CDB3;
     margin: 0;
+    text-decoration: none;
 }
 
 footer .footer-content .footer-puppy {
