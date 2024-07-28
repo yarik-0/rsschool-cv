@@ -1,7 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
-  
+
 body {
     margin: 0 auto;
     width: 1280px;
@@ -39,8 +39,8 @@ header .logo a {
     text-decoration: none;
 }
 
-header .logo h2 {
-    margin: 10px 0 0 0;
+header .logo h1 {
+    margin: 10px 0 0 5px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -65,7 +65,7 @@ header nav ul {
 }
 
 header nav ul li {
-    margin: 0 10px;
+    margin: 0 0 0 36px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -131,7 +131,7 @@ header nav ul li a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 960px;
+    height: 929px;
     width: 1240px;
     margin: 45px 0;
 }
@@ -144,7 +144,7 @@ header nav ul li a {
     justify-content: center;
     align-items: center;
     height: 435px;
-    margin: 15px 20px;
+    margin: 18px 20px;
 }
 
 .pets .content .slider .card p {
@@ -169,13 +169,13 @@ header nav ul li a {
     border: 2px solid #F1CDB3;
     color: #292929;
     text-decoration: none;
-    padding: 16px 55px;
+    padding: 14px 45px;
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 }
 
-.pets .content .slider .card:hover .button-card{
+.pets .content .slider .card:hover .button-card {
     background-color: #FDDCC4;
     border: 2px solid #FDDCC4;
     transition: 0.5s;
@@ -218,6 +218,11 @@ header nav ul li a {
     border: 2px solid #F1CDB3;
     color: #292929;
     cursor: pointer;
+}
+
+.pets .content .active:hover {
+    background: #F1CDB3;
+    transition: 0.5s;
 }
 
 footer {
