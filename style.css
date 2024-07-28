@@ -224,6 +224,12 @@ header nav ul li a {
 .pets .pets-content .slider .button-arrow {
     width: 52px;
     height: 52px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
 }
 
 .pets .pets-content .slider .card {
@@ -308,7 +314,7 @@ header nav ul li a {
     margin-top: 0;
 }
 
-.help .help-content .list-one {
+.help .help-content .list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -427,7 +433,7 @@ footer .footer-content .contacts {
     margin-top: 16px;
 }
 
-footer .footer-content img{
+footer .footer-content img {
     margin-right: 20px;
 }
 
