@@ -226,7 +226,7 @@ header nav ul li a {
 }
 
 footer {
-    background-image: url("./images/footer-gradient-background.png");
+    background-image: url("../images/footer-gradient-background.png");
     height: 350px;
     width: 1280px;
 }
