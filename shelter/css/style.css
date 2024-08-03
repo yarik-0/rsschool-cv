@@ -4,7 +4,7 @@ html {
 
 body {
     margin: 0 auto;
-    width: 1280px;
+    max-width: 1280px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,9 +15,10 @@ body {
 
 /* header */
 header {
-    position: absolute;
-    top: 30px;
-    width: 1200px;
+position: absolute;
+top: 30px;
+width: 100%;
+max-width: 1200px;
 }
 
 header .logo {
@@ -91,11 +92,11 @@ header nav ul li a {
 
 .startscreen {
     width: 100%;
+    max-width: 1280px;
     height: 818px;
-    background-image: url("../images/start-screen-gradient-background.jpg");
     padding-top: 90px;
+    background-image: url("../images/start-screen-gradient-background.jpg");
 }
-
 .startscreen header {
     margin: 30px 40px 0 40px;
     width: 100%;
@@ -125,7 +126,8 @@ header nav ul li a {
 
 .startscreen .content .text p {
     color: #CDCDCD;
-    width: 460px;
+    width: 100%;
+    max-width: 460px;
     height: 72px;
     font-family: 'Arial';
     font-style: normal;
@@ -167,12 +169,44 @@ header nav ul li a {
 .startscreen .startscreen-poppy {
     width: 698px;
     height: 728px;
-    background-image: url("../images/start-screen-puppy.png");
 }
+
+
+@media (max-width: 1180px) {
+    .startscreen .startscreen-poppy img {
+        width: 569px;
+        height: 593px;
+        margin-top: 135px;
+        margin-right: auto;
+    }    
+}
+
+@media (max-width: 1230px) {
+    .logo {
+        margin-left: 28px;
+        transition: 0.5s;
+    }
+    
+    header nav {
+        margin-right: 32px;
+        transition: 0.5s;
+    }
+}
+/*
+@media (min-width: 960px) {
+    .startscreen .startscreen-poppy {
+        width: 569px;
+        height: 593px;
+        background-image: url("../images/start-screen-gradient-background.jpg");
+    }
+}
+*/
 
 /* About */
 .about {
     width: 100%;
+    max-width: 1280px;
+    height: 588px;
     background: #FFFFFF;
 }
 
@@ -228,6 +262,7 @@ header nav ul li a {
 
 .pets {
     width: 100%;
+    max-width: 1280px;
     height: 697px;
     background: #F6F6F6;
     padding: 80px 0 100px 0;
@@ -249,13 +284,14 @@ header nav ul li a {
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #545454;
-    margin: 0 0 60px 0;
+    margin: 0 0 64px 0;
 }
 
 .pets .pets-content .slider {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 940px;
 }
 
 .pets .pets-content .slider .button-arrow {
@@ -283,7 +319,7 @@ header nav ul li a {
     justify-content: center;
     align-items: center;
     height: 435px;
-    margin: 0 40px;
+    margin: 0 0;
 }
 
 .pets .pets-content .slider .card p {
@@ -340,14 +376,15 @@ header nav ul li a {
 }
 
 .help {
-    width: 1280px;
-    height: 611px;
+    width: 100%;
+    max-width: 1280px;
+    min-width: 611px;
     display: flex;
     justify-content: center;
 }
 
 .help .help-content {
-    height: 431px;
+    min-height: 431px;
     margin-top: 80px;
 }
 
@@ -360,19 +397,21 @@ header nav ul li a {
     color: #545454;
     letter-spacing: 0.06em;
     text-align: center;
-    margin-bottom: 55px;
+    margin-bottom: 59px;
     margin-top: 0;
 }
 
 .help .help-content .list {
     width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    row-gap: 55px;
+    column-gap: 120px;
 }
 
 .help .help-content .paragraph {
-    padding: 0 60px 55px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -394,22 +433,27 @@ header nav ul li a {
 }
 
 .donation {
+    width: 100%;
+    max-width: 1280px;
     height: 462px;
     background: #F6F6F6;
+    display: flex;
+    justify-content: center;
 }
 
 .donation .donation-content {
     display: flex;
-    margin: 80px 182px 100px 183px;
+    margin: 80px 0 100px 0;
 }
 
 .donation .donation-content .content {
     padding-right: 10px;
+    width: 359px;
 }
 
 .donation .donation-content .dog {
     height: 261px;
-    margin-top: 7px;
+    margin-top: 11px;
     margin-right: 30px;
 }
 
@@ -432,7 +476,7 @@ header nav ul li a {
     line-height: 110%;
     letter-spacing: 0.06em;
     color: #545454;
-    margin: 16px 0;
+    margin: 18px 0;
 }
 
 .donation .donation-content .content .credit-card-container {
@@ -470,13 +514,14 @@ header nav ul li a {
 footer {
     background-image: url("../images/footer-gradient-background.png");
     height: 350px;
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
 }
 
 footer .footer-content {
     display: flex;
     justify-content: space-between;
-    margin: 37px 40px 0 40px;
+    margin: 40px 40px 0 40px;
 }
 
 footer .footer-content .contacts {
@@ -549,4 +594,26 @@ footer .footer-content .footer-puppy {
     width: 300px;
     height: 310px;
     margin: 0;
+}
+
+@media (max-width: 960px) {
+    .startscreen {
+        height: 1165px;
+        background-image: url("../images/start-screen-background.jpg");
+        background-size: cover;
+    }
+
+    .startscreen .content {
+        flex-direction: column;
+        margin: 150px 100px 0 100px;
+        align-items: center;
+    }
+
+    .startscreen .content .text {
+        margin: 0;
+    }
+
+    .startscreen .startscreen-poppy img {
+        margin-top: 100px;
+    }
 }
