@@ -208,6 +208,22 @@ header .burger .line {
         margin-top: 135px;
         margin-right: auto;
     }
+
+    .pets .pets-content {
+        margin: 0 !important;
+    }
+
+    .help {
+        height: 691px !important;
+    }
+
+    .pets .pets-content .slider .katrine {
+        margin-right: 0s;
+    }
+
+    .pets .pets-content .slider .woody {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 1230px) {
@@ -221,16 +237,6 @@ header .burger .line {
         transition: 0.5s;
     }
 }
-
-/*
-@media (min-width: 960px) {
-    .startscreen .startscreen-poppy {
-        width: 569px;
-        height: 593px;
-        background-image: url("../images/start-screen-gradient-background.jpg");
-    }
-}
-*/
 
 /* About */
 .about {
@@ -267,6 +273,7 @@ header .burger .line {
     letter-spacing: 0.06em;
     color: #545454;
     margin: 0 0 25px 0;
+    max-width: 411px;
 }
 
 .about .container .content .text1 {
@@ -290,6 +297,8 @@ header .burger .line {
     align-items: center;
     color: #4C4C4C;
     margin-top: 18px;
+    position: relative;
+    top: 8px;
 }
 
 /* pets */
@@ -356,6 +365,14 @@ header .burger .line {
     margin: 0 0;
 }
 
+.pets .pets-content .slider .katrine {
+    margin-right: 40px;
+}
+
+.pets .pets-content .slider .woody {
+    margin-left: 40px;
+}
+
 .pets .pets-content .slider .card p {
     font-family: 'Georgia';
     font-style: normal;
@@ -413,6 +430,7 @@ header .burger .line {
     width: 100%;
     max-width: 1280px;
     min-width: 611px;
+    height: 611px;
     display: flex;
     justify-content: center;
 }
@@ -450,8 +468,6 @@ header .burger .line {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 170px;
-    height: 113px;
 }
 
 .help .help-content h4 {
@@ -479,7 +495,7 @@ header .burger .line {
 
 .donation .donation-content {
     display: flex;
-    margin: 80px 0 100px 0;
+    margin: 80px 9px 100px 0;
 }
 
 .donation .donation-content .content {
@@ -697,6 +713,7 @@ footer .footer-content .footer-puppy-320 {
 
     .about .container .content .text2 {
         width: 420px;
+        position: static;
     }
 
     .pets {
@@ -705,11 +722,13 @@ footer .footer-content .footer-puppy-320 {
 
     .pets .pets-content {
         margin: 0 30px;
+        align-items: center;
     }
 
     .pets .pets-content .slider {
         width: 100%;
         min-width: 0;
+        max-width: 711px;
         justify-content: space-between;
     }
 
@@ -742,7 +761,7 @@ footer .footer-content .footer-puppy-320 {
     }
 
     .help {
-        height: 779px;
+        height: 779px !important;
     }
 
     .help .help-content .list {
@@ -759,9 +778,14 @@ footer .footer-content .footer-puppy-320 {
         align-items: center;
     }
 
+    .help .help-content .paragraph {
+        width: 170px;
+        height: 113px;
+    }
+
     .donation .donation-content .dog {
         margin-top: 11px;
-        margin-right: 1px;
+        margin-right: -7px;
     }
 
     .donation .donation-content .content {
@@ -769,7 +793,7 @@ footer .footer-content .footer-puppy-320 {
         position: relative;
         bottom: 37px;
         width: 359px;
-        margin-left: -20px;
+        margin-left: -12px;
         padding: 0;
     }
 
@@ -920,7 +944,7 @@ footer .footer-content .footer-puppy-320 {
     }
 
     .pets .pets-content {
-        margin: 42px 0 0 0;
+        margin: 42px 0 0 0 !important;
         align-items: center;
     }
 
@@ -964,7 +988,7 @@ footer .footer-content .footer-puppy-320 {
     }
 
     .help {
-        height: 100%;
+        height: 100% !important;
         min-width: 0;
     }
 
@@ -1012,11 +1036,12 @@ footer .footer-content .footer-puppy-320 {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-left: -30px;
     }
 
     .donation .donation-content .content h3 {
         font-size: 25px;
-        margin-left: 22px;
+        margin-left: 31px;
         text-align: center;
     }
 
@@ -1117,12 +1142,18 @@ footer .footer-content .footer-puppy-320 {
 
 @media (max-width: 465px) {
     .help {
-        height: 745px;
+        height: 745px !important;
     }
 }
 
 @media (min-width: 627px) {
     .help .help-content .list .empty_box {
         display: none;
+    }
+}
+
+@media (max-width: 750px) and (min-width: 606px) {
+    footer .footer-content .locations {
+        margin-top: 31px;
     }
 }
