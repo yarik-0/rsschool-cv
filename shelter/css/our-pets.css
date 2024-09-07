@@ -12,6 +12,286 @@ body {
     flex-direction: column;
     flex-wrap: nowrap;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+#block-background,
+#modal-background {
+    z-index: 100;
+    display: none;
+    background-color: #292929;
+    opacity: 60%;
+    position: fixed;
+    inset: 0;
+    height: 100%;
+}
+
+#block-background.active,
+#modal-background.active {
+    display: block !important;
+}
+
+.opened {
+    transform: rotate(90deg);
+    transition: 0.5s;
+}
+
+.non-scroll {
+    overflow-y: hidden;
+}
+
+.activ {
+    left: calc(100% - 320px) !important;
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #292929;
+    width: 320px;
+    height: 400%;
+    z-index: 101;
+    transition: 0.5s;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 248px;
+    margin-left: 39px;
+    margin-right: 38px;
+}
+
+.mobile-menu ul li {
+    margin: 0;
+    color: #CDCDCD;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 40px;
+    font-family: 'Arial';
+    line-height: 160%;
+    order: 0;
+    flex-grow: 0;
+    font-size: 32px;
+}
+
+.mobile-menu ul li:hover a {
+    color: #FAFAFA;
+    border-bottom: 3px solid #F1CDB3;
+    transition: 0.2s;
+}
+
+.mobile-menu ul li.active a {
+    border-bottom: 3px solid #F1CDB3;
+    color: #FAFAFA;
+    margin-top: 0;
+    cursor: context-menu;
+}
+
+.mobile-menu ul li.active a:hover {
+    text-decoration: none;
+    cursor: context-menu;
+}
+
+.mobile-menu ul li a {
+    color: #CDCDCD;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.modal-window {
+    width: 952px;
+    height: 552px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 101;
+}
+
+.modal-window button {
+    width: 52px;
+    height: 52px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    font-size: 32px;
+}
+
+.modal-window button:hover {
+    background: #F1CDB3;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.modal-window .container {
+    display: flex;
+    background: #FAFAFA;
+    border-radius: 9px;
+    width: 900px;
+    height: 500px;
+    margin-right: 43px;
+}
+
+.modal-window .container img {
+    height: 500px;
+    width: 500px;
+}
+
+.modal-window .container .content {
+    width: 351px;
+    margin-left: 31px;
+}
+
+.modal-window .container .content h3 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    margin: 50px 0 0 0;
+}
+
+.modal-window .container .content h4 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    margin-top: 8px;
+}
+
+.modal-window .container .content h5 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 114%;
+    letter-spacing: 0.06em;
+    margin-top: 40px;
+}
+
+.modal-window .container .content ul {
+    padding-left: 14px;
+    margin-top: 40px;
+}
+
+.modal-window .container .content ul li {
+    color: #F1CDB3;
+    margin-top: 10px;
+}
+
+.modal-window .container .content ul li span {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.modal-window.display {
+    display: flex !important;
+}
+
+@media (max-width: 960px) {
+    .modal-window {
+        width: 682px;
+        height: 402px;
+    }
+
+    .modal-window .container {
+        width: 630px;
+        height: 350px;
+    }
+
+    .modal-window .container img {
+        height: 350px;
+        width: 350px;
+    }
+
+    .modal-window .container .content {
+        margin-left: 11px;
+    }
+
+    .modal-window .container .content h3 {
+        margin: 11px 0 0 0;
+    }
+
+    .modal-window .container .content h4 {
+        margin-top: 9px;
+        margin-bottom: 0;
+    }
+
+    .modal-window .container .content h5 {
+        font-size: 13px;
+        line-height: 108%;
+        margin-top: 21px;
+        margin-bottom: 0;
+        width: 265px;
+    }
+
+    .modal-window .container .content ul {
+        padding-left: 15px;
+        margin-top: 19px;
+    }
+
+    .modal-window .container .content ul li {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 690px) {
+    .modal-window {
+        width: 270px;
+        height: 393px;
+    }
+
+    .modal-window .container {
+        width: auto;
+        height: auto;
+        margin-right: 30px;
+        padding-right: 13px;
+    }
+
+    .modal-window .container img {
+        display: none;
+    }
+
+    .modal-window .container .content {
+        width: 216px;
+    }
+
+    .modal-window .container .content h3 {
+        margin: 11px 0 0 38px;
+    }
+
+    .modal-window .container .content h4 {
+        margin-top: 8px;
+        margin-left: 33px;
+    }
+
+    .modal-window .container .content h5 {
+        width: 220px;
+        text-align: justify;
+    }
+
+    .modal-window .container .content ul {
+        margin-top: 23px;
+        margin-bottom: 10px;
+    }
+
 }
 
 header {
@@ -112,6 +392,10 @@ header .burger {
     float: right;
     margin-right: 19px;
     margin-top: 19px;
+    transition: 0.5s;
+    position: relative;
+    z-index: 102;
+    cursor: pointer;
 }
 
 header .burger .line {
@@ -412,14 +696,6 @@ footer .footer-content .footer-puppy-320 {
 }
 
 @media (max-width: 750px) {
-    header nav {
-        display: none;
-    }
-
-    header .burger {
-        display: flex;
-    }
-
     header .logo {
         margin-left: 20px;
     }
@@ -519,14 +795,26 @@ footer .footer-content .footer-puppy-320 {
     }
 }
 
-@media (max-width: 750px) and (min-width: 637px) {
+@media (max-width: 750px) and (min-width: 620px) {
     .pets .content .slider {
         width: 400px;
     }
 }
 
-@media (max-width: 750px) and (min-width: 606px) {
+@media (max-width: 750px) and (min-width: 589px) {
     footer .footer-content .locations {
         margin-top: 31px;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+
+    header .burger {
+        display: flex;
+        margin-right: 20px;
+        margin-top: 18px;
     }
 }

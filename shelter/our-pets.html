@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="./css/our-pets.css">
 </head>
 
-<body>
+<body id="body"></body>
+    <div id="block-background"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li class="active"><a href="#" >About the shelter</a></li>
+            <li><a href="our-pets.html">Our pets</a></li>
+            <li><a href="#help">Help the shelter</a></li>
+            <li><a href="#footer">Contacts</a></li>
+        </ul>
+    </div>
 
     <header>
         <div class="logo">
@@ -26,7 +35,7 @@
             </ul>
         </nav>
 
-        <div class="burger">
+        <div class="burger"  id="burger">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -119,4 +128,15 @@
         </div>
     </footer>
 
+    <div class="modal-window" id="modal-window"></div>
+        <button id="button">&times</button>
+        <div id="modal-window-content"></div>
+    </div>
+    <div id="modal-background"></div>
+
 </body>
+
+<script src="data.js"></script>
+<script src="our-pets.js"></script>
+
+</html>

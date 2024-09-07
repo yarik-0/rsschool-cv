@@ -9,7 +9,17 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body id="body">
+    <div id="block-background"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li  class="active"><a href="#" >About the shelter</a></li>
+            <li><a href="our-pets.html">Our pets</a></li>
+            <li><a href="#help">Help the shelter</a></li>
+            <li><a href="#footer">Contacts</a></li>
+        </ul>
+    </div>
+
     <header>
         <div class="logo">
             <a href="#">Cozy House</a>
@@ -25,7 +35,7 @@
             </ul>
         </nav>
 
-        <div class="burger">
+        <div class="burger" id="burger">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -77,23 +87,11 @@
         <div class="pets-content">
             <h3>Our friends who<br> are looking for a house</h3>
             <div class="slider">
-                <a class="button-arrow left">&larr;</a>
-                <div class="card katrine">
-                    <img src="./images/pets-katrine.png" alt="oj">
-                    <p>Katrine</p>
-                    <a class="button-card" href="#">Learn more</a>
+                <a class="button-arrow left" id="button-left">&larr;</a>
+                <div id="pets-cards">
+                    
                 </div>
-                <div class="card jennifer">
-                    <img src="./images/pets-jennifer.png" alt="sdv">
-                    <p>Jennifer</p>
-                    <a class="button-card" href="#">Learn more</a>
-                </div>
-                <div class="card woody">
-                    <img src="./images/pets-woody.png" alt="sf">
-                    <p>Woody</p>
-                    <a class="button-card" href="#">Learn more</a>
-                </div>
-                <a class="button-arrow right">&rarr;</a>
+                <a class="button-arrow right" id="button-rights">&rarr;</a>
             </div>
             <div class="button-container">
                 <a class="button" href="our-pets.html">Get to know the rest</a>
@@ -205,6 +203,14 @@
         </div>
     </footer>
 
+    <div class="modal-window" id="modal-window">
+        <button id="button">&times</button>
+        <div id="modal-window-content"></div>
+    </div>
+    <div id="modal-background"></div>
 </body>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
 
 </html>
