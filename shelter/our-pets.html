@@ -9,12 +9,21 @@
     <link rel="stylesheet" href="./css/our-pets.css">
 </head>
 
-<body>
+<body id="body"></body>
+    <div id="block-background"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="shelter.html">About the shelter</a></li>
+            <li class="active"><a>Our pets</a></li>
+            <li><a href="shelter.html#help">Help the shelter</a></li>
+            <li><a href="#footer">Contacts</a></li>
+        </ul>
+    </div>
 
     <header>
         <div class="logo">
             <a href="shelter.html">Cozy House</a>
-            <h1>Shelter for prts in Boston</h1>
+            <h1>Shelter for pets in Boston</h1>
         </div>
 
         <nav>
@@ -26,7 +35,7 @@
             </ul>
         </nav>
 
-        <div class="burger">
+        <div class="burger"  id="burger">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -36,8 +45,8 @@
     <section class="pets">
         <div class="content">
             <h3>Our friends who<br> are looking for a house</h3>
-            <div class="slider">
-                <div class="card katrine">
+            <div class="slider" id="pets-cards">
+                <!-- <div class="card katrine">
                     <img src="./images/pets-katrine.png" alt="oj">
                     <p>Katrine</p>
                     <a class="button-card" href="#">Learn more</a>
@@ -76,14 +85,14 @@
                     <img src="./images/pets-freddie.png" alt="oj">
                     <p>Freddie</p>
                     <a class="button-card" href="#">Learn more</a>
-                </div>
+                </div> -->
             </div>
             <div class="navigation">
-                <a class="button">&lt;&lt;</a>
-                <a class="button">&lt;</a>
-                <a class="button current">1</a>
-                <a class="button active">></a>
-                <a class="button active">>></a>
+                <a class="button" id="dubl-right-buttun">&lt;&lt;</a>
+                <a class="button" id="right-buttun">&lt;</a>
+                <a class="button current" id="current"></a>
+                <a class="button active" id="left-buttun">></a>
+                <a class="button active" id="dubl-left-buttun">>></a>
             </div>
         </div>
     </section>
@@ -119,4 +128,15 @@
         </div>
     </footer>
 
+    <div class="modal-window" id="modal-window">
+        <button id="button">&times</button>
+        <div id="modal-window-content"></div>
+    </div>
+    <div id="modal-background"></div>
+
 </body>
+
+<script src="data.js"></script>
+<script src="our-pets.js"></script>
+
+</html>
