@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initSliderCards();
     startSliderCenter();
     sliderButtons();
-    console.log(sliderCards);
 });
 
 window.addEventListener("resize", () => {

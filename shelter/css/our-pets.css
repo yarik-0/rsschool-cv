@@ -40,6 +40,10 @@ body {
     overflow-y: hidden;
 }
 
+.non-display {
+    opacity: 0;
+}
+
 .activ {
     left: calc(100% - 320px) !important;
 }
@@ -50,7 +54,7 @@ body {
     left: 100%;
     background-color: #292929;
     width: 320px;
-    height: 400%;
+    height: 1800px;
     z-index: 101;
     transition: 0.5s;
 }
@@ -436,6 +440,7 @@ header .burger .line {
     height: 929px;
     width: 1240px;
     margin: 47px 0 42px 0;
+    transition: 0.5s;
 }
 
 .pets .content .slider .card {
@@ -447,6 +452,7 @@ header .burger .line {
     align-items: center;
     height: 435px;
     margin: 18px 20px;
+    cursor: pointer;
 }
 
 .pets .content .slider .card p {
@@ -474,6 +480,7 @@ header .burger .line {
     padding: 14px 45px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
     margin-bottom: 45px;
 }
 
@@ -519,7 +526,6 @@ header .burger .line {
 .pets .content .active {
     border: 2px solid #F1CDB3;
     color: #292929;
-    cursor: pointer;
 }
 
 .pets .content .active:hover {
@@ -617,7 +623,7 @@ footer .footer-content .footer-puppy-320 {
 }
 
 
-@media (max-width: 1260px) {
+@media (max-width: 1256px) {
     .pets .content .slider .scarlett {
         display: none;
     }
@@ -796,6 +802,12 @@ footer .footer-content .footer-puppy-320 {
 }
 
 @media (max-width: 750px) and (min-width: 620px) {
+    .pets .content .slider {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 750px) {
     .pets .content .slider {
         width: 400px;
     }
