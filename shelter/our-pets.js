@@ -1,3 +1,9 @@
+let sliderList = [];
+let counter = 1;
+let maxCounter = 1;
+let minCounter = 1;
+let sliderShift = 0;
+
 document.addEventListener("DOMContentLoaded", () => {
     windowWidth();
     initBurgerMenu();
@@ -6,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sliderButtons();
     sliderCounter();
     sliderShiftCounter();
-    sliderButtonsFix();
 });
 
 window.addEventListener("resize", () => {
@@ -22,8 +27,6 @@ window.addEventListener("resize", () => {
         sliderButtons();
     }
 })
-
-let sliderList = [];
 
 function initSlider() {
     let data = petsData;
@@ -48,40 +51,11 @@ function windowWidth() {
 }
 
 function synchronization() {
+    if (counter > maxCounter) {
+        counter = maxCounter
+    }
     sliderShift = ((counter - 1) * cardsCount);
-    for (let i = 0; sliderShift > sliderList.length - cardsCount; i++) {
-        sliderShift -= 1;
-    }
-    for (let i = 0; counter > maxCounter; i++) {
-        counter -= 1;
-    }
 }
-
-function sliderButtonsFix() {
-    const dublbuttonRights = document.getElementById('dubl-left-buttun');
-    const buttonRights = document.getElementById('left-buttun');
-    const buttonLeft = document.getElementById('right-buttun');
-    const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-
-    if (counter == maxCounter) {
-        dublbuttonRights.classList.remove('active');
-        buttonRights.classList.remove('active');
-        buttonLeft.classList.add('active');
-        dublbuttonLeft.classList.add('active');
-    }
-
-    if (counter == minCounter) {
-        dublbuttonRights.classList.add('active');
-        buttonRights.classList.add('active');
-        buttonLeft.classList.remove('active');
-        dublbuttonLeft.classList.remove('active');
-    }
-}
-
-let counter = 1;
-let maxCounter = 1;
-let minCounter = 1;
-let sliderShift = 0;
 
 function sliderShiftCounter() {
     let current = document.getElementById('current');
@@ -111,10 +85,11 @@ function sliderButtons() {
 }
 
 function dublRightClick() {
-    let slider = document.getElementById('pets-cards')
     if (counter !== maxCounter) {
+        let slider = document.getElementById('pets-cards')
         slider.classList.toggle('non-display')
         sliderShift += cardsCount * ((maxCounter) - counter);
+        dublRightStyle()
         setTimeout(function () {
             counter = maxCounter;
             startSlider();
@@ -122,87 +97,41 @@ function dublRightClick() {
             sliderShiftCounter();
             slider.classList.toggle('non-display')
         }, 500);
-        dublRightStyle()
     }
 }
 
 function dublRightStyle() {
-    if (counter === minCounter) {
-        setTimeout(function () {
-            const buttonLeft = document.getElementById('right-buttun');
-            const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-            buttonLeft.classList.remove('active');
-            dublbuttonLeft.classList.remove('active');
-        }, 500)
-    } else {
-        setTimeout(function () {
-            const buttonLeft = document.getElementById('right-buttun');
-            const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-            buttonLeft.classList.add('active');
-            dublbuttonLeft.classList.add('active');
-        }, 500)
-    }
-    if (counter === maxCounter) {
-        setTimeout(function () {
-            const dublbuttonRights = document.getElementById('dubl-left-buttun');
-            const buttonRights = document.getElementById('left-buttun');
-            buttonRights.classList.remove('active');
-            dublbuttonRights.classList.remove('active');
-        }, 500)
-    } else {
-        setTimeout(function () {
-            const dublbuttonRights = document.getElementById('dubl-left-buttun');
-            const buttonRights = document.getElementById('left-buttun');
-            buttonRights.classList.add('active');
-            dublbuttonRights.classList.add('active');
-        }, 500)
-    }
+    const buttonLeft = document.getElementById('right-buttun');
+    const dublbuttonLeft = document.getElementById('dubl-right-buttun');
+    buttonLeft.classList.add('active');
+    dublbuttonLeft.classList.add('active');
+
+    const dublbuttonRights = document.getElementById('dubl-left-buttun');
+    const buttonRights = document.getElementById('left-buttun');
+    buttonRights.classList.remove('active');
+    dublbuttonRights.classList.remove('active');
 }
 
 function rightClick() {
     let slider = document.getElementById('pets-cards')
-    if (counter !== maxCounter) {
-        if (counter < maxCounter) {
-            sliderShift += cardsCount;
-            counter += 1;
+    if (counter < maxCounter) {
+        sliderShift += cardsCount;
+        counter += 1;
+        slider.classList.toggle('non-display')
+        if (counter == maxCounter) {
+            dublRightStyle()
+        } else {
+            const buttonLeft = document.getElementById('right-buttun');
+            const dublbuttonLeft = document.getElementById('dubl-right-buttun');
+            buttonLeft.classList.add('active');
+            dublbuttonLeft.classList.add('active');
+        }
+        setTimeout(function () {
+            startSlider();
+            setCardButtonClick();
+            sliderShiftCounter();
             slider.classList.toggle('non-display')
-            setTimeout(function () {
-                startSlider();
-                setCardButtonClick();
-                sliderShiftCounter();
-                slider.classList.toggle('non-display')
-            }, 500);
-        }
-        if (counter === maxCounter) {
-            setTimeout(function () {
-                const dublbuttonRights = document.getElementById('dubl-left-buttun');
-                const buttonRights = document.getElementById('left-buttun');
-                buttonRights.classList.remove('active');
-                dublbuttonRights.classList.remove('active');
-            }, 500)
-        } else {
-            setTimeout(function () {
-                const dublbuttonRights = document.getElementById('dubl-left-buttun');
-                const buttonRights = document.getElementById('left-buttun');
-                buttonRights.classList.add('active');
-                dublbuttonRights.classList.add('active');
-            }, 500)
-        }
-        if (counter === minCounter) {
-            setTimeout(function () {
-                const buttonLeft = document.getElementById('right-buttun');
-                const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-                buttonLeft.classList.remove('active');
-                dublbuttonLeft.classList.remove('active');
-            }, 500)
-        } else {
-            setTimeout(function () {
-                const buttonLeft = document.getElementById('right-buttun');
-                const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-                buttonLeft.classList.add('active');
-                dublbuttonLeft.classList.add('active');
-            }, 500)
-        }
+        }, 500);
     }
 }
 
@@ -212,6 +141,14 @@ function leftClick() {
         sliderShift -= cardsCount;
         counter -= 1;
         slider.classList.toggle('non-display')
+        if (counter == minCounter) {
+            dublLeftStyle()
+        } else {
+            const dublbuttonRights = document.getElementById('dubl-left-buttun');
+            const buttonRights = document.getElementById('left-buttun');
+            buttonRights.classList.add('active');
+            dublbuttonRights.classList.add('active');
+        }
         setTimeout(function () {
             startSlider();
             setCardButtonClick();
@@ -219,42 +156,13 @@ function leftClick() {
             slider.classList.toggle('non-display')
         }, 500);
     }
-    if (counter === minCounter) {
-        setTimeout(function () {
-            const buttonLeft = document.getElementById('right-buttun');
-            const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-            buttonLeft.classList.remove('active');
-            dublbuttonLeft.classList.remove('active');
-        }, 500)
-    } else {
-        setTimeout(function () {
-            const buttonLeft = document.getElementById('right-buttun');
-            const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-            buttonLeft.classList.add('active');
-            dublbuttonLeft.classList.add('active');
-        }, 500)
-    }
-    if (counter === maxCounter) {
-        setTimeout(function () {
-            const dublbuttonRights = document.getElementById('dubl-left-buttun');
-            const buttonRights = document.getElementById('left-buttun');
-            buttonRights.classList.remove('active');
-            dublbuttonRights.classList.remove('active');
-        }, 500)
-    } else {
-        setTimeout(function () {
-            const dublbuttonRights = document.getElementById('dubl-left-buttun');
-            const buttonRights = document.getElementById('left-buttun');
-            buttonRights.classList.add('active');
-            dublbuttonRights.classList.add('active');
-        }, 500)
-    }
 }
 
 function dublLeftClick() {
     let slider = document.getElementById('pets-cards')
     slider.classList.toggle('non-display')
     sliderShift -= cardsCount * ((maxCounter - (maxCounter - counter)) - 1);
+    dublLeftStyle()
     setTimeout(function () {
         counter = minCounter;
         startSlider();
@@ -262,36 +170,18 @@ function dublLeftClick() {
         sliderShiftCounter();
         slider.classList.toggle('non-display')
     }, 500);
-    if (counter === minCounter) {
-        setTimeout(function () {
-            const buttonLeft = document.getElementById('right-buttun');
-            const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-            buttonLeft.classList.remove('active');
-            dublbuttonLeft.classList.remove('active');
-        }, 500)
-    } else {
-        setTimeout(function () {
-            const buttonLeft = document.getElementById('right-buttun');
-            const dublbuttonLeft = document.getElementById('dubl-right-buttun');
-            buttonLeft.classList.add('active');
-            dublbuttonLeft.classList.add('active');
-        }, 500)
-    }
-    if (counter === maxCounter) {
-        setTimeout(function () {
-            const dublbuttonRights = document.getElementById('dubl-left-buttun');
-            const buttonRights = document.getElementById('left-buttun');
-            buttonRights.classList.remove('active');
-            dublbuttonRights.classList.remove('active');
-        }, 500)
-    } else {
-        setTimeout(function () {
-            const dublbuttonRights = document.getElementById('dubl-left-buttun');
-            const buttonRights = document.getElementById('left-buttun');
-            buttonRights.classList.add('active');
-            dublbuttonRights.classList.add('active');
-        }, 500)
-    }
+}
+
+function dublLeftStyle() {
+    const buttonLeft = document.getElementById('right-buttun');
+    const dublbuttonLeft = document.getElementById('dubl-right-buttun');
+    buttonLeft.classList.remove('active');
+    dublbuttonLeft.classList.remove('active');
+
+    const dublbuttonRights = document.getElementById('dubl-left-buttun');
+    const buttonRights = document.getElementById('left-buttun');
+    buttonRights.classList.add('active');
+    dublbuttonRights.classList.add('active');
 }
 
 function initBurgerMenu() {
