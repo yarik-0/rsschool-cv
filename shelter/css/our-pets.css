@@ -1,0 +1,532 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    max-width: 1280px;
+    background: #FFFFFF;
+}
+
+header .logo {
+    display: inline;
+    float: left;
+    margin-left: 40px;
+}
+
+header .logo a {
+    margin: 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    text-decoration: none;
+}
+
+header .logo h1 {
+    margin: 10px 0 0 5px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: #292929;
+}
+
+header nav {
+    float: right;
+    display: inline;
+    margin-right: 40px;
+}
+
+header nav ul {
+    color: #ffffff;
+    list-style-type: none;
+    padding-left: 10px;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 0 0 36px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #545454;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+header nav ul li:hover a {
+    color: #292929;
+    border-bottom: 3px solid #F1CDB3;
+    transition: 0.5s;
+}
+
+header nav ul li.active {
+    border-bottom: 3px solid #F1CDB3;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #292929;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+header nav ul li a {
+    color: #545454;
+    text-decoration: none;
+}
+
+header .burger {
+    display: none;
+    flex-direction: column;
+    row-gap: 8px;
+    float: right;
+    margin-right: 19px;
+    margin-top: 19px;
+}
+
+header .burger .line {
+    border: 1px solid #F1CDB3;
+    width: 28px;
+}
+
+.pets {
+    width: 100%;
+    height: 1342px;
+    background: #F6F6F6;
+    margin-top: 120px;
+}
+
+.pets .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.pets .content h3 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    margin: 0;
+}
+
+.pets .content .slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 929px;
+    width: 1240px;
+    margin: 47px 0 42px 0;
+}
+
+.pets .content .slider .card {
+    background: #FAFAFA;
+    border-radius: 9px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 435px;
+    margin: 18px 20px;
+}
+
+.pets .content .slider .card p {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 30px 0;
+}
+
+.pets .content .slider .card .button-card {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+    color: #292929;
+    text-decoration: none;
+    padding: 14px 45px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.pets .content .slider .card:hover .button-card {
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 0.5s;
+}
+
+.pets .content .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pets .content .button {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    border-radius: 100px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
+}
+
+.pets .content .current {
+    background: #F1CDB3;
+    color: #292929;
+    border: 2px solid #F1CDB3;
+    cursor: pointer;
+}
+
+
+.pets .content .active {
+    border: 2px solid #F1CDB3;
+    color: #292929;
+    cursor: pointer;
+}
+
+.pets .content .active:hover {
+    background: #F1CDB3;
+    transition: 0.5s;
+}
+
+footer {
+    background-image: url("../images/footer-gradient-background.png");
+    height: 350px;
+    width: 100%;
+    max-width: 1280px;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 40px 0 40px;
+}
+
+footer .footer-content .contacts {
+    width: 279px;
+    margin-top: 16px;
+}
+
+footer .footer-content img {
+    margin-right: 20px;
+}
+
+footer .footer-content .contacts h2 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+footer .footer-content .contacts div {
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-content .contacts .email {
+    margin: 40px auto;
+}
+
+footer .footer-content .locations {
+    width: 302px;
+    margin-top: 16px;
+}
+
+footer .footer-content .locations .central-street {
+    margin: 33px auto;
+}
+
+footer .footer-content .locations h2 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+footer .footer-content .locations div {
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-content a {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    margin: 0;
+    text-decoration: none;
+}
+
+footer .footer-content .footer-puppy {
+    width: 300px;
+    height: 310px;
+    margin: 0;
+}
+
+footer .footer-content .footer-puppy-320 {
+    display: none;
+}
+
+
+@media (max-width: 1260px) {
+    .pets .content .slider .scarlett {
+        display: none;
+    }
+
+    .pets .content .slider .freddie {
+        display: none;
+    }
+
+    .pets .content .slider {
+        width: 100%;
+    }
+}
+
+@media (max-width: 960px) {
+    header .logo {
+        margin-left: 30px;
+    }
+
+    header nav {
+        margin-right: 30px;
+    }
+
+    .pets {
+        height: 1733px;
+    }
+
+    .pets .content .slider {
+        width: 100%;
+        max-width: 638px;
+        height: 100%;
+        justify-content: center;
+        margin: 10px 0 31px 0;
+    }
+
+    .pets .content .slider .katrine {
+        margin: 28px 20px 0 20px;
+    }
+
+    .pets .content .slider .jennifer {
+        margin: 28px 20px 0 20px;
+    }
+
+    .pets .content .slider .woody {
+        margin: 30px 20px 0 20px;
+    }
+
+    .pets .content .slider .sophia {
+        margin: 30px 20px 0 20px;
+    }
+
+    .pets .content .slider .timmy {
+        margin: 30px 20px 0 20px;
+    }
+
+    .pets .content .slider .charly {
+        margin: 30px 20px 0 20px;
+    }
+
+    footer {
+        background-image: url("../images/footer-background-768.png");
+        background-size: cover;
+        height: 100%;
+    }
+
+    footer .footer-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 15px 40px 0 40px;
+        row-gap: 63px;
+    }
+
+    footer .footer-content .locations {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    header nav {
+        display: none;
+    }
+
+    header .burger {
+        display: flex;
+    }
+
+    header .logo {
+        margin-left: 20px;
+    }
+
+    .pets {
+        height: 1649px;
+    }
+
+    .pets .content {
+        margin-top: 42px;
+    }
+
+    .pets .content h3 {
+        font-size: 25px;
+        line-height: 129%;
+    }
+
+    .pets .content .slider .sophia {
+        display: none;
+    }
+
+    .pets .content .slider .timmy {
+        display: none;
+    }
+
+    .pets .content .slider .charly {
+        display: none;
+    }
+
+    .pets .content .slider {
+        margin: 23px 0 34px 0;
+    }
+
+    .pets .content .navigation {
+        gap: 10px;
+    }
+
+    .pets .content .button {
+        margin: 0;
+    }
+
+    footer {
+        background-image: url("../images/footer-gradient-background-320.png");
+        height: 100%;
+    }
+
+    footer .footer-content {
+        margin: 0;
+        justify-content: center;
+        row-gap: 0;
+    }
+
+    footer .footer-content .contacts {
+        margin-top: 31px;
+    }
+
+    footer .footer-content .locations {
+        margin-top: 0;
+        margin-left: 8px;
+    }
+
+    footer .footer-content .contacts h2 {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    footer .footer-content .locations h2 {
+        text-align: center;
+        font-size: 25px;
+        width: 294px;
+    }
+
+    footer .footer-content .contacts .email {
+        margin: 38px 0 40px 13px;
+    }
+
+    footer .footer-content .contacts div {
+        margin: 30px 0 40px 19px;
+    }
+
+    footer .footer-content .locations .central-street {
+        margin: 38px 0px 41px -3px;
+    }
+
+    footer .footer-content .locations div {
+        margin: 41px 0 0 -3px;
+    }
+
+    footer .footer-content .footer-puppy {
+        display: none;
+    }
+
+    footer .footer-content .footer-puppy-320 {
+        display: block;
+        margin-top: 40px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 750px) and (min-width: 637px) {
+    .pets .content .slider {
+        width: 400px;
+    }
+}
+
+@media (max-width: 750px) and (min-width: 606px) {
+    footer .footer-content .locations {
+        margin-top: 31px;
+    }
+}
