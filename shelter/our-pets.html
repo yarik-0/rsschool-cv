@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>our-pets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/icons8-scratching-post-50.png">
+    <link rel="stylesheet" href="./css/our-pets.css">
+</head>
+
+<body id="body"></body>
+    <div id="block-background"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="shelter.html">About the shelter</a></li>
+            <li class="active"><a>Our pets</a></li>
+            <li><a href="shelter.html#help">Help the shelter</a></li>
+            <li><a href="#footer">Contacts</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="logo">
+            <a href="shelter.html">Cozy House</a>
+            <h1>Shelter for pets in Boston</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="shelter.html">About the shelter</a></li>
+                <li class="active">Our pets</li>
+                <li><a href="shelter.html#help">Help the shelter</a></li>
+                <li><a href="#footer">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <div class="burger"  id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <section class="pets">
+        <div class="content">
+            <h3>Our friends who<br> are looking for a house</h3>
+            <div class="slider" id="pets-cards">
+                <!-- <div class="card katrine">
+                    <img src="./images/pets-katrine.png" alt="oj">
+                    <p>Katrine</p>
+                    <a class="button-card" href="#">Learn more</a>
+                </div>
+                <div class="card jennifer">
+                    <img src="./images/pets-jennifer.png" alt="oj">
+                    <p>Jennifer</p>
+                    <a class="button-card" href="#">Learn more</a>
+                </div>
+                <div class="card woody">
+                    <img src="./images/pets-woody.png" alt="oj">
+                    <p>Woody</p>
+                    <a class="button-card" href="#">Learn more</a>
+                </div>
+                <div class="card sophia">
+                    <img src="./images/pets-sophia.png" alt="oj">
+                    <p>Sophia</p>
+                    <a class="button-card" href="#">Learn more</a>
+                </div>
+                <div class="card timmy">
+                    <img src="./images/pets-timmy.png" alt="oj">
+                    <p>Timmy</p>
+                    <a class="button-card" href="#">Learn more</a>
+                </div>
+                <div class="card charly">
+                    <img src="./images/pets-charly.png" alt="oj">
+                    <p>Charly</p>
+                    <a class="button-card" href="#">Learn more</a>
+                </div>
+                <div class="card scarlett">
+                    <img src="./images/pets-scarlet.png" alt="oj">
+                    <p>Scarlett</p>
+                    <a class="button-card" href="#">Learn more</a>
+                </div>
+                <div class="card freddie">
+                    <img src="./images/pets-freddie.png" alt="oj">
+                    <p>Freddie</p>
+                    <a class="button-card" href="#">Learn more</a>
+                </div> -->
+            </div>
+            <div class="navigation">
+                <a class="button" id="dubl-right-buttun">&lt;&lt;</a>
+                <a class="button" id="right-buttun">&lt;</a>
+                <a class="button current" id="current"></a>
+                <a class="button active" id="left-buttun">></a>
+                <a class="button active" id="dubl-left-buttun">>></a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="contacts">
+                <h2>For questions and suggestions</h2>
+                <div class="email">
+                    <img src="./images/icon-email.svg" alt="oj">
+                    <a href="mailto:email@shelter.com">email@shelter.com</a>
+                </div>
+                <div>
+                    <img src="./images/icon-phone.svg" alt="oj">
+                    <a href="tel:+136745677554">+13 674 567 75 54</a>
+                </div>
+            </div>
+            <div class="locations">
+                <h2>We are waiting for your visit</h2>
+                <div class="central-street">
+                    <img src="./images/icon-marker.png" alt="oj">
+                    <a href="https://www.google.com/maps/dir/67.1914748,58.5955047/-74.1941093,131.4351985/@77.5041546,82.3288765,12.63z/data=!4m4!4m3!1m0!1m1!4e1?hl=ru&entry=ttu"
+                        target="_blank">1 Central Street, Boston (entrance from the store)</a>
+                </div>
+                <div>
+                    <img src="./images/icon-marker.png" alt="oj">
+                    <a href="https://www.google.com/maps/dir//-74.1941093,131.4351985/@-47.7690458,18.0562979,3z?hl=ru&entry=ttu"
+                        target="_blank">18 South Park, London </a>
+                </div>
+            </div>
+            <img src="./images/footer-puppy.png" class="footer-puppy" alt="oj">
+            <img src="./images/footer-puppy-320.png" class="footer-puppy-320" alt="oj">
+        </div>
+    </footer>
+
+    <div class="modal-window" id="modal-window">
+        <button id="button">&times</button>
+        <div id="modal-window-content"></div>
+    </div>
+    <div id="modal-background"></div>
+
+</body>
+
+<script src="data.js"></script>
+<script src="our-pets.js"></script>
+
+</html>
