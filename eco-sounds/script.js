@@ -1,92 +1,90 @@
+let audio = '';
+let isPlaying = false;
+
 document.addEventListener("DOMContentLoaded", () => {
-    createAudio();
-    imgClic();
-    logoClic();
+    initLogo();
+    initAudio();
+    buttonClick();
+    imgClick();
 });
 
-function createAudio() {
-    let audio = document.getElementById('button')
-    audio.onclick = () => startAudio();
-}
-
-function startAudio() {
-    let audioObj = document.getElementById('forest-audio')
-    audioObj.play();
-}
-
-function imgClic() {
-    let logo = document.getElementById('logo');
-    logo.onclick = () => logoClic();
-
-    let solovey = document.getElementById('solovey');
-    solovey.onclick = () => soloveyClic();
-
-    let drozd = document.getElementById('drozd');
-    drozd.onclick = () => drozdClic();
-
-    let malinovka = document.getElementById('malinovka');
-    malinovka.onclick = () => malinovkaClic();
-
-    let jayvoronok = document.getElementById('jayvoronok');
-    jayvoronok.onclick = () => jayvoronokClic();
-
-    let slavka = document.getElementById('slavka');
-    slavka.onclick = () => slavkaClic();
-}
-
-function logoClic() {
+function initLogo() {
     document.getElementById('fon-img').style.backgroundImage = "url(./assets/img/forest.jpg)";
 
-    nonClicStyle();
-
+    nonClickStyle();
     document.getElementById('logo').style.filter = "invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%)";
 }
 
-function soloveyClic() {
-    document.getElementById('fon-img').style.backgroundImage = "url(./assets/img/solovey.jpg)";
-
-    nonClicStyle();
-
-    document.getElementById('solovey').style.filter = "invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%)";
+function initAudio() {
+    audio = document.getElementById('forest-audio');
 }
 
-function drozdClic() {
-    document.getElementById('fon-img').style.backgroundImage = "url(./assets/img/drozd.jpg)";
-    
-    nonClicStyle();
+function buttonClick() {
+    let pause = document.getElementById('play-button');
+    let play = document.getElementById('pause-button');
 
-    document.getElementById('drozd').style.filter = "invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%)";
+    pause.onclick = () => audioControl();
+    play.onclick = () => audioControl();
+
 }
 
-function malinovkaClic() {
-    document.getElementById('fon-img').style.backgroundImage = "url(./assets/img/zarynka.jpg)";
-    
-    nonClicStyle();
-
-    document.getElementById('malinovka').style.filter = "invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%)";
+function audioControl() {
+    if(isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        document.getElementById('play-button').style.display = 'block';
+        document.getElementById('pause-button').style.display = 'none';
+    } else {
+        audio.play();
+        isPlaying = true;
+        document.getElementById('play-button').style.display = 'none';
+        document.getElementById('pause-button').style.display = 'block';
+    }
 }
 
-function jayvoronokClic() {
-    document.getElementById('fon-img').style.backgroundImage = "url(./assets/img/javoronok.jpg)";
-    
-    nonClicStyle();
+function imgClick() {
+    let logo = document.getElementById('logo');
+    logo.onclick = () => logoClick();
 
-    document.getElementById('jayvoronok').style.filter = "invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%)";
+    let list =  document.querySelectorAll('.navigation>ul>li')
+    for (const item of list) {
+        item.onclick = (e) => changeSound(e);
+    }
 }
 
-function slavkaClic() {
-    document.getElementById('fon-img').style.backgroundImage = "url(./assets/img/slavka.jpg)";
+function logoClick() {
+    document.getElementById('fon-img').style.backgroundImage = "url(./assets/img/forest.jpg)";
 
-    nonClicStyle();
+    nonClickStyle();
+    document.getElementById('logo').style.filter = "invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%)";
 
-    document.getElementById('slavka').style.filter = "invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%)";
+    audio.pause();
+    isPlaying = false;
+    audio.currentTime = 0;
+    audio = document.getElementById('forest-audio')
+    audioControl();
 }
 
-function nonClicStyle() {
+function changeSound(e) {
+    element = e.target || e.srcElement;
+    sound_name = element.id
+
+    document.getElementById('fon-img').style.backgroundImage = `url(./assets/img/${sound_name}.jpg)`;
+    nonClickStyle();
+    document.getElementById(sound_name).style.filter = "invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%)";
+    audio.pause();
+    isPlaying = false;
+    audio.currentTime = 0;
+    audio = document.getElementById(`${sound_name}-audio`)
+    audioControl();
+}
+
+function nonClickStyle() {
     document.getElementById('logo').style.filter = "";
-    document.getElementById('solovey').style.filter = "";
-    document.getElementById('drozd').style.filter = "";
-    document.getElementById('malinovka').style.filter = "";
-    document.getElementById('jayvoronok').style.filter = "";
-    document.getElementById('slavka').style.filter = "";
+
+    let list =  document.querySelectorAll('.navigation>ul>li')
+
+    for (const item of list) {
+        item.style.filter = "";
+    }
 }

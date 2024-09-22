@@ -63,6 +63,10 @@ body .container img {
     height: 160px;
 }
 
+#pause-button {
+    display: none;
+}
+
 footer {
     background-color: #000000;
     color: #ffffff;
