@@ -1,0 +1,120 @@
+header {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+header .header-container {
+    padding: 0 40px;
+    width: calc(100% - 80px);
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .navigation {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+}
+
+header .logo img:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+header ul {
+    display: flex;
+    padding: 0;
+}
+
+header ul li {
+    list-style: none;
+    font-size: 25px;
+    padding-left: 40px;
+    transition: 0.5s;
+}
+
+header ul li:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+body {
+    margin: 0;
+}
+
+body .container {
+    background-image: url(./assets/img/forest.jpg); 
+    background-size: cover;
+    height: calc(100vh - 120px);
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .container img {
+    width: 160px;
+    height: 160px;
+}
+
+#pause-button {
+    display: none;
+}
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+footer .footer-container {
+    padding: 0 40px;
+    width: calc(100% - 80px);
+    max-width: 1440px;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-container .footer-content .content {
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-container .footer-content .content p {
+    margin: auto 25px auto 0;
+    font-size: 25px;
+}
+
+footer .footer-container .footer-content .content a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;    
+}
+
+footer .footer-container .footer-content .content a:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    transition: 0.5s;
+}
+
+footer .footer-logo {
+    width: 135px;
+    height: 50px;
+    margin: 5px 0;
+    background-size: cover;
+    background-image: url(./assets/svg/rss.svg);
+}
+
+footer .footer-logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    transition: 0.5s;
+}
