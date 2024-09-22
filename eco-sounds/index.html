@@ -11,23 +11,24 @@
 
 <header>
     <div class="header-container">
-        <div class="logo"><img src="./assets/svg/logo.svg"></div>
+        <div id="logo" class="logo"><img src="./assets/svg/logo.svg"></div>
         <div class="navigation">
             <ul>
-                <li>Соловей</li>
-                <li>Дрозд</li>
-                <li>Малиновка</li>
-                <li>Жаворонок</li>
-                <li>Славка</li>
+                <li id="solovey">Соловей</li>
+                <li id="drozd">Дрозд</li>
+                <li id="malinovka">Малиновка</li>
+                <li id="jayvoronok">Жаворонок</li>
+                <li id="slavka">Славка</li>
             </ul>
         </div>
     </div>
 </header>
 
 <body>
-    <div class="container">
-        <img src="./assets/svg/play.svg">
+    <div id="fon-img" class="container">
+        <img id="button" src="./assets/svg/play.svg">
     </div>
+    <audio id="forest-audio" src="./assets/audio/forest.mp3"></audio>
 </body>
 
 <footer>
@@ -42,3 +43,7 @@
         </div>
     </div>
 </footer>
+
+<script src="script.js"></script>
+
+</html>
