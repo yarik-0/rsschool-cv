@@ -14,13 +14,10 @@ function initInput() {
     const imgButton = document.getElementById('img-input');
 
     imgButton.onclick = () => galeryDisplay(inputButton.value);
-    // keydown. = () => galeryDisplay(inputButton.value);
-    // inputButton.onclick = () => galeryDisplay();
 }
 function galeryDisplay(str) {
     const query = str || 'nature'
     const apiKey = 'fcV-uRy1gzmKNyxDXlsnUxKYQ36UaQcCYE82ZfaGYmY';
-    // const images = document.querySelectorAll('.image');
     const galery = document.getElementById('galery');
     galery.innerHTML = "";
 
@@ -43,5 +40,3 @@ function deleteFunction() {
     const button = document.getElementById('delete');
     button.onclick = () => input.value = '';
 }
-
-// todo: add handlers for input and for button
