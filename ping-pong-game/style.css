@@ -11,25 +11,36 @@ body {
     width: 500px;
     height: 300px;
     background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
 }
 
-.game .left-block {
+
+.interfese {
+    display: flex;
+    justify-content: space-between;
+}
+
+#left-block {
     height: 50px;
     width: 10px;
     background-color: #d11f1f;
+    position: relative;
 }
 
-.game .right-block {
+#right-block {
     height: 50px;
     width: 10px;
     background-color: #d11f1f;
+    position: relative;
 }
 
-.game .boll {
+#boll {
     width: 15px;
     height: 15px;
     background-color: #000000;
     border-radius: 8px;
+    position: relative;
 }
 
 footer {
